@@ -38,3 +38,18 @@ function displayUsers(user){
 
 }
 
+function deleteUser(userId){
+
+    axios.delete(`https://crudcrud.com/api/f1694aa5784747ed83b2deea8f170caa/appointmentData/${userId}`)
+    .then(response => {removeFromScreen(userId);
+    console.log(response.data)})
+    .catch(error => console.log(error))
+    
+}
+
+function removeFromScreen(userId){
+    const userToBeDeleted= document.getElementById(userId)
+    if(userToBeDeleted){
+    usersList.removeChild(userToBeDeleted)
+}
+}
