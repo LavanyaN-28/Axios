@@ -53,3 +53,9 @@ function removeFromScreen(userId){
     usersList.removeChild(userToBeDeleted)
 }
 }
+
+function editUserDetails(userId,name,email){
+    userName.value=name;
+    userEmail.value=email;
+    deleteUser(userId)
+}
