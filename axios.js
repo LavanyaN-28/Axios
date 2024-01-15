@@ -18,6 +18,16 @@ function handleFormSubmit(event){
 
     displayUsers(user)
 }
+window.addEventListener("DOMContentLoaded",()=>{
+
+    axios.get("https://crudcrud.com/api/f1694aa5784747ed83b2deea8f170caa/appointmentData")
+        .then((response) => {
+            for(var i=0;i<response.data.length;i++){
+                displayUsers(response.data[i])
+            }    
+        })
+        .catch(error => console.log(error))
+})
 
 function displayUsers(user){
 
